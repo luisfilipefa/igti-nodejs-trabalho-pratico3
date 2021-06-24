@@ -28,3 +28,13 @@ INSERT INTO pets (name, type, owner_id) VALUES ('Bob', 'Cachorro', 5)
 INSERT INTO pets (name, type, owner_id) VALUES ('Milu', 'Cachorro', 5)
 INSERT INTO pets (name, type, owner_id) VALUES ('Emmy', 'Gato', 5)
 INSERT INTO pets (name, type, owner_id) VALUES ('Amora', 'Cachorro', 6)
+
+CREATE TABLE services (
+  id SERIAL PRIMARY KEY,
+  description VARCHAR NOT NULL,
+  value NUMERIC NOT NULL,
+  pet_id INT NOT NULL,
+  owner_id INT NOT NULL,
+  CONSTRAINT fk_pets FOREIGN KEY (pet_id) REFERENCES pets (id),
+  CONSTRAINT fk_owners_services FOREIGN KEY (owner_id) REFERENCES owners (id)
+)
