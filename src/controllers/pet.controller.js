@@ -72,7 +72,6 @@ const update = async (req, res, next) => {
   }
 };
 
-// TODO verificar se o proprietário possui algum pet cadastrado
 const destroy = async (req, res, next) => {
   try {
     const { id } = req.params;
